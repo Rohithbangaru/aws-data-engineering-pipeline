@@ -1,0 +1,21 @@
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: standalone
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../.env
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/project/airflow/dags
+      PYTHONPATH: /opt/project
+      MYSQL_HOST: host.docker.internal
+      AWS_SHARED_CREDENTIALS_FILE: /home/airflow/.aws/credentials
+      AWS_CONFIG_FILE: /home/airflow/.aws/config
+    volumes:
+      - ..:/opt/project
+      - ${USERPROFILE}/.aws:/home/airflow/.aws:ro
+    restart: unless-stopped

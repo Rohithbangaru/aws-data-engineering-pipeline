@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+
+# Virtual environments and local IDE settings
+venv/
+.venv/
+env/
+.idea/
+.vscode/
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Logs and local generated data
+*.log
+airflow/logs/
+logs/
+raw_data/
+output/
+
+# OS files
+.DS_Store
+Thumbs.db

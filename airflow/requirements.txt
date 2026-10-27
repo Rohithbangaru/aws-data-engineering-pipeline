@@ -1,0 +1,5 @@
+# Airflow is intended to run locally in Docker to minimize ongoing AWS costs.
+# Install Airflow and providers through the Docker image / matching constraints
+# for the selected Airflow version rather than installing this file blindly.
+apache-airflow-providers-amazon
+apache-airflow-providers-common-sql
